@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 # Scrapes Image URLs from Bulbapedia
 
 # Retrieve All Pokemon Names
-url = "https://pokeapi.co/api/v2/pokemon/?limit=1025?"
+url = "https://pokeapi.co/api/v2/pokemon/?limit=1050?"
 r = requests.get(url)
 data = r.json()
 # Storing Names
@@ -20,11 +20,11 @@ exceptionalPokemonNames = {
     122: "Mr._Mime",
     250: "Ho-Oh",
     386: "Deoxys",
-    413: "Wormadam-Plant",
+    413: "Wormadam",
     474: "Porygon-Z",
     487: "Giratina",
     492: "Shaymin",
-    550: "Basculin-Red",
+    550: "Basculin",
     555: "Darmanitan",
     641: "Tornadus",
     642: "Thundurus",
@@ -54,6 +54,12 @@ exceptionalPokemonNames = {
     892: "Urshifu-Single_Strike",
     902: "Basculegion",
     905: "Enamorus",
+    916: "Oinkologne",
+    925: "Maushold",
+    931: "Squawkabilly",
+    964: "Palafin",
+    978: "Tatsugiri",
+    982: "Dudunsparce",
     1001: "Wo-Chien",
     1002: "Chien-Pao",
     1003: "Ting-Lu",
@@ -80,6 +86,7 @@ for i in pokemonNames:
 expectional = []
 id = 0
 directUrls = []
+failed_urls = []
 for url in pokemonImagePageUrls:
     page = requests.get(url)
     if page.status_code == 200:
@@ -88,6 +95,7 @@ for url in pokemonImagePageUrls:
         directUrls.append(res["href"])
     else:
         expectional.append(pokemonNames[id])
+        failed_urls.append(url)
     id = id + 1
     print(
         f"Scrapping for direct links: {id}/({len(pokemonImagePageUrls)})",
@@ -99,6 +107,9 @@ print(*directUrls, sep="\n")
 if len(expectional) > 0:
     print("Failed to fetch:")
     print(*expectional, sep="\n")
+
+for failed_url in failed_urls:
+    print('FAILED URL: {}'.format(failed_url))
 
 # Storing the data in text files
 with open("URLs/URLs.txt", "w") as f:
