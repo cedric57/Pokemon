@@ -58,5 +58,6 @@ def download_from_list(file_path: str, output_dir: str):
 
 # Try to download all of the URL lists. Other than URLs.txt, which is updated via the ImageScrapper, the other lists are wildly outdated.
 download_from_list(file_path="URLs/URLs.txt", output_dir="downloads/URLs/")
+download_from_list(file_path="URLs/AlternateURLs.txt", output_dir="downloads/forms/")
 download_from_list(file_path="URLs/FormURLs.txt", output_dir="downloads/forms/")
 download_from_list(file_path="URLs/ExceptionalURLs.txt", output_dir="downloads/exceptional_urls/")

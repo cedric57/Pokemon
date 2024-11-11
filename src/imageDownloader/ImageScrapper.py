@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 # Scrapes Image URLs from Bulbapedia
 
 # Retrieve All Pokemon Names
-url = "https://pokeapi.co/api/v2/pokemon/?limit=1050?"
+url = "https://pokeapi.co/api/v2/pokemon/?limit=1025?"
 r = requests.get(url)
 data = r.json()
 # Storing Names
@@ -12,6 +12,8 @@ pokemonNames = []
 for i in data["results"]:
     pokemonNames.append(i["name"])
 pokemonImagePageUrls = []
+pokemonImagePageUrls2 = []
+endFile = ["-Mega", "-Gigantamax", "-Gigantamax_2", "-Alola", "-Galar", "-Hisui", "-Primal", "-Paldea", "-Therian", "-Male", "-Female", "-Hero", "-Origin"]
 
 exceptionalPokemonNames = {
     29: "Nidoran",
@@ -33,7 +35,7 @@ exceptionalPokemonNames = {
     648: "Meloetta",
     669: "Flabébé",
     678: "Meowstic",
-    681: "Aegislash-Shield",
+    681: "Aegislash",
     710: "Pumpkaboo",
     711: "Gourgeist",
     718: "Zygarde",
@@ -45,13 +47,13 @@ exceptionalPokemonNames = {
     782: "Jangmo-o",
     783: "Hakamo-o",
     784: "Kommo-o",
-    849: "Toxtricity-Amped",
+    849: "Toxtricity",
     865: "Sirfetch'd",
     866: "Mr. Rime",
     875: "Eiscue",
     876: "Indeedee",
-    877: "Morpeko-Full",
-    892: "Urshifu-Single_Strike",
+    877: "Morpeko",
+    892: "Urshifu",
     902: "Basculegion",
     905: "Enamorus",
     916: "Oinkologne",
@@ -80,6 +82,15 @@ for i in pokemonNames:
     )
     pokemonImagePageUrls.append(url)
     print(name + " " + url)
+    for x in endFile:
+        url2 = (
+            "https://bulbapedia.bulbagarden.net/wiki/File:"
+            + str(id).zfill(4)
+            + name
+            + x
+            + ".png"
+        )
+        pokemonImagePageUrls2.append(url2)
     id = id + 1
 
 # Making requests to scrape the pages for direct links to the artwork
@@ -102,6 +113,21 @@ for url in pokemonImagePageUrls:
         end="\r",
     )
 
+# Making requests to scrape the pages for direct links to the artwork
+id = 0
+akternateUrls = []
+for url in pokemonImagePageUrls2:
+    page = requests.get(url)
+    if page.status_code == 200:
+        soup = BeautifulSoup(page.content, "html.parser")
+        res = soup.find(class_="fullMedia").find(class_="internal")
+        akternateUrls.append(res["href"])
+    id = id + 1
+    print(
+        f"Scrapping for direct links: {id}/({len(pokemonImagePageUrls2)})",
+        end="\r",
+    )
+
 print("\nDirect URLs:")
 print(*directUrls, sep="\n")
 if len(expectional) > 0:
@@ -114,6 +140,10 @@ for failed_url in failed_urls:
 # Storing the data in text files
 with open("URLs/URLs.txt", "w") as f:
     for url in directUrls:
+        f.write("%s\n" % url)
+# Storing the data in text files
+with open("URLs/AlternateURLs.txt", "w") as f:
+    for url in akternateUrls:
         f.write("%s\n" % url)
 with open("ImageScrapperFailedList.txt", "w") as f:
     for name in expectional:

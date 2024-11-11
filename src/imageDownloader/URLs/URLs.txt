@@ -678,7 +678,7 @@ https://archives.bulbagarden.net/media/upload/1/1e/0677Espurr.png
 https://archives.bulbagarden.net/media/upload/9/92/0678Meowstic.png
 https://archives.bulbagarden.net/media/upload/4/48/0679Honedge.png
 https://archives.bulbagarden.net/media/upload/d/de/0680Doublade.png
-https://archives.bulbagarden.net/media/upload/5/5a/0681Aegislash-Shield.png
+https://archives.bulbagarden.net/media/upload/5/5e/0681Aegislash.png
 https://archives.bulbagarden.net/media/upload/5/58/0682Spritzee.png
 https://archives.bulbagarden.net/media/upload/e/e3/0683Aromatisse.png
 https://archives.bulbagarden.net/media/upload/a/a7/0684Swirlix.png
@@ -846,7 +846,7 @@ https://archives.bulbagarden.net/media/upload/0/0d/0845Cramorant.png
 https://archives.bulbagarden.net/media/upload/1/1f/0846Arrokuda.png
 https://archives.bulbagarden.net/media/upload/e/e7/0847Barraskewda.png
 https://archives.bulbagarden.net/media/upload/f/fa/0848Toxel.png
-https://archives.bulbagarden.net/media/upload/0/00/0849Toxtricity-Amped.png
+https://archives.bulbagarden.net/media/upload/7/79/0849Toxtricity.png
 https://archives.bulbagarden.net/media/upload/9/9b/0850Sizzlipede.png
 https://archives.bulbagarden.net/media/upload/8/83/0851Centiskorch.png
 https://archives.bulbagarden.net/media/upload/2/2d/0852Clobbopus.png
@@ -874,7 +874,7 @@ https://archives.bulbagarden.net/media/upload/b/b2/0873Frosmoth.png
 https://archives.bulbagarden.net/media/upload/f/ff/0874Stonjourner.png
 https://archives.bulbagarden.net/media/upload/6/6d/0875Eiscue.png
 https://archives.bulbagarden.net/media/upload/7/78/0876Indeedee.png
-https://archives.bulbagarden.net/media/upload/e/ef/0877Morpeko-Full.png
+https://archives.bulbagarden.net/media/upload/c/c3/0877Morpeko.png
 https://archives.bulbagarden.net/media/upload/9/9a/0878Cufant.png
 https://archives.bulbagarden.net/media/upload/a/a3/0879Copperajah.png
 https://archives.bulbagarden.net/media/upload/f/fc/0880Dracozolt.png
@@ -889,7 +889,7 @@ https://archives.bulbagarden.net/media/upload/9/98/0888Zacian.png
 https://archives.bulbagarden.net/media/upload/4/41/0889Zamazenta.png
 https://archives.bulbagarden.net/media/upload/0/0e/0890Eternatus.png
 https://archives.bulbagarden.net/media/upload/1/14/0891Kubfu.png
-https://archives.bulbagarden.net/media/upload/5/57/0892Urshifu-Single_Strike.png
+https://archives.bulbagarden.net/media/upload/b/b9/0892Urshifu.png
 https://archives.bulbagarden.net/media/upload/b/bf/0893Zarude.png
 https://archives.bulbagarden.net/media/upload/5/51/0894Regieleki.png
 https://archives.bulbagarden.net/media/upload/7/79/0895Regidrago.png
