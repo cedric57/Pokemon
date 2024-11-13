@@ -41,8 +41,8 @@ def download_from_list(file_path: str, output_dir: str):
     # Downloading
     for url in URLs:
         try:
-            id = re.search(r"/(\d{4}.*)", url).group(1)
-            fileToDownload = output_dir + id + ".png"
+            id = re.search(r"/(\d{4}.*)", requests.utils.unquote(url)).group(1)
+            fileToDownload = output_dir + id
             response = requests.get(url, stream=True)
             if not ReDownloadOnlyCorruptedFiles:
                 Download(fileToDownload, url, response)  # (Re-)Download all files unconditionally
